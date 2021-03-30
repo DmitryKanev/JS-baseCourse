@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--1. Дан код:
+    var a = 1, b = 1, c, d;
+    c = ++a; alert(c);           // 2 => ++ здесь префиксный вариант инкремента. Возвращает значение обновленным
+    d = b++; alert(d);           // 1 => ++ оператор инкремента(по дефолту прибавляет 1 к операнду). сначала возврат значения а следом происходит инкрементирование
+    c = (2+ ++a); alert(c);      // 5 => а до начала расчета уже равно 2, с префиксным инкрементом значение увеличивается на 1 и прибавляется к 2
+    d = (2+ b++); alert(d);      // 4 => аналогично
+    alert(a);                    // 3
+    alert(b);                    // 3 => собственно подтверждение постфиксного инкремента, в 5 строке кода произошло увеличение аргумента b на 1,уже после арифметического сложения
+    
+
+    2. Чему будет равен x в примере ниже?
+    var a = 2;
+    var x = 1 + (a *= 2);
+    alert (x); // 5
+  
+  
+    3. Объявить
+    две целочисленные переменные a и b и задать им произвольные начальные
+    значения. Затем написать скрипт, который работает по следующему принципу: *
+    если a и b положительные, вывести их разность; * если а и b отрицательные,
+    вывести их произведение; * если а и b разных знаков, вывести их сумму; ноль
+    можно считать положительным числом. -->
+    <script>
+      let a = 6;
+      let b = 9;
+      if (a > 0 && b > 0) {
+        x = a - b;
+        alert(x);
+      } else if (a < 0 && b < 0) {
+        x = a * b;
+        alert(x);
+      } else if ((a > 0 && b < 0) || (a < 0 && b > 0)) {
+        x = a + b;
+        alert(x);
+      }
+    </script>
+
+    <!--4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора
+    switch организовать вывод чисел от a до 15.Сделал два варианта с циклом и без него-->
+    <script>
+      let a = +prompt("Введите число от 1 до 15");
+      switch (a) {
+        case a:
+          function numbers(a) {
+            for (let count = a; count <= 15; count++) {
+              console.log(count);
+            }
+          }
+          numbers(a);
+      }
+    </script>
+
+    <script>
+      let a = +prompt("Введите число от 1 до 15");
+      switch (a) {
+        case 1:
+          console.log(1);
+
+        case 2:
+          console.log(2);
+
+        case 3:
+          console.log(3);
+
+        case 4:
+          console.log(4);
+
+        case 5:
+          console.log(5);
+
+        case 6:
+          console.log(6);
+
+        case 7:
+          console.log(7);
+
+        case 8:
+          console.log(8);
+
+        case 9:
+          console.log(9);
+
+        case 10:
+          console.log(10);
+
+        case 11:
+          console.log(11);
+
+        case 12:
+          console.log(12);
+
+        case 13:
+          console.log(13);
+
+        case 14:
+          console.log(14);
+
+        case 15:
+          console.log(15);
+          break;
+      }
+    </script>
+
+    <!-- Задача 5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно 		
+			       использовать оператор return. -->
+    <script>
+      let a = 5;
+      let b = 6;
+
+      function plus(a, b) {
+        return a + b;
+      }
+
+      function minus(a, b) {
+        return a - b;
+      }
+
+      function div(a, b) {
+        return a / b;
+      }
+
+      function mult(a, b) {
+        return a * b;
+      }
+      pl = plus(a, b);
+      mi = minus(a, b);
+      d = div(a, b);
+      m = mult(a, b);
+      console.log(pl);
+      console.log(mi);
+      console.log(d);
+      console.log(m);
+    </script>
+    <!-- Задача 6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, 	
+				arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного 		
+				значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и 		
+				вернуть полученное значение (использовать switch). -->
+    <script>
+      let arg1 = +prompt("Введите первый аргумент");
+      let arg2 = +prompt("Введите второй аргумент");
+      let operation = prompt('Введите действие ("+"; "-"; "/"; "*")');
+      function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+          case "+":
+            function plus(arg1, arg2) {
+              return arg1 + arg2;
+            }
+            console.log(plus(arg1, arg2));
+            break;
+          case "-":
+            function minus(arg1, arg2) {
+              return arg1 - arg2;
+            }
+            console.log(minus(arg1, arg2));
+            break;
+          case "/":
+            function div(arg1, arg2) {
+              return arg1 / arg2;
+            }
+            console.log(div(arg1, arg2));
+            break;
+          case "*":
+            function mult(arg1, arg2) {
+              return arg1 * arg2;
+            }
+            console.log(mult(arg1, arg2));
+            break;
+        }
+      }
+      mathOperation(arg1, arg2, operation);
+    </script>
+  </body>
+</html>
