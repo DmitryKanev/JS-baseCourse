@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.-->
+    <script>
+      let nums = 2;
+      while (nums <= 100) {
+        let check = true;
+        for (let i = 2; i < nums; i++) {
+          if (nums % i === 0) {
+            check = false;
+            break;
+          }
+        }
+        if (check) console.log(nums);
+        nums++;
+      }
+    </script>
+    <!--2.Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров. 
+        Товары в корзине хранятся в массиве. Задачи:
+        a) Организовать такой массив для хранения товаров в корзине;
+        b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.-->
+    <script>
+      let basket = [
+        {
+          product: "1",
+          price: 50,
+        },
+        {
+          product: "2",
+          price: 60,
+        },
+        {
+          product: "3",
+          price: 70,
+        },
+        {
+          product: "4",
+          price: 80,
+        },
+      ];
+
+      function countBasketPrice(basket) {
+        let basketPrice = 0;
+        for (let prod of basket) {
+          basketPrice += prod.price;
+        }
+        return basketPrice;
+      }
+
+      console.log(countBasketPrice(basket));
+    </script>
+    <!--Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.-->
+    <script>
+      for (let j = 0; j < 10; console.log(j++)) {}
+    </script>
+  </body>
+</html>
