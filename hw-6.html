@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .good {
+        border: 1px solid black;
+        margin: 5px;
+        background-color: blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cart-list"></div>
+    <script>
+      "use strict";
+
+      const cartItems = {
+        render(good) {
+          return `
+      <div class="good">
+        <div>
+          <b>Product Name</b>: ${good.product}
+        </div>
+        <div>
+          <b>price</b>: ${good.price}
+        </div>
+        <div>
+          <b>Quant</b>: ${good.quantity}
+        </div>
+        <div>
+          <b>Total</b>: ${good.price * good.quantity}
+        </div>
+      </div>`;
+        },
+      };
+
+      const cart = {
+        cartListBlock: {},
+        cartItems,
+        goods: [
+          { product: "1", price: 50 },
+          { product: "2", price: 60 },
+          { product: "3", price: 70 },
+          { product: "4", price: 80 },
+        ],
+        init() {
+          this.cartListBlock = document.querySelector(".cart-list");
+          this.render();
+        },
+        render() {
+          if (this.goods.length) {
+            this.goods.forEach((good) => {
+              this.cartListBlock.insertAdjacentHTML(
+                "beforeend",
+                this.cartItems.render(good)
+              );
+            });
+            this.cartListBlock.insertAdjacentHTML(
+              "beforeend",
+              `In cart ${
+                this.goods.length
+              } for total amount ${this.getCartPrice()}`
+            );
+          } else {
+            this.cartListBlock.textContent = "Cart is empty";
+          }
+        },
+        getCartPrice() {
+          return this.goods.reduce(function (price, good) {
+            return price + good.price * good.quantity;
+          }, 0);
+        },
+      };
+
+      cart.init();
+    </script>
+  </body>
+</html>
