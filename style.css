@@ -1,0 +1,38 @@
+.drawnBoard {
+  width: 500px;
+  margin: auto auto;
+}
+.board {
+  width: 480px;
+  height: 480px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.block {
+  width: 60px;
+  height: 60px;
+  float: left;
+}
+.black {
+  background-color: rgb(155, 130, 84);
+}
+
+.white {
+  background-color: white;
+}
+
+.letters {
+  display: flex;
+  width: 480px;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+.numbers {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  height: 480px;
+  justify-content: space-around;
+}
