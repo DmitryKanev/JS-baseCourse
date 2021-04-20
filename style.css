@@ -1,0 +1,29 @@
+#game {
+  margin: 100px auto;
+  width: 360px;
+  background: white;
+  border: 1px solid green;
+}
+
+td.cell {
+  width: 15px;
+  height: 15px;
+  border: 1px dotted #eee;
+  border-collapse: collapse;
+}
+
+.snakeHead {
+  background-color: #00a723;
+  border-radius: 7.5px;
+}
+
+.snakeBody {
+  background-color: #53ff29;
+  border-radius: 7.5px;
+}
+
+.food {
+  background-color: #ff4776;
+  border-radius: 15px;
+  transform: rotate(45deg);
+}
